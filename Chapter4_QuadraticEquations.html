@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 4: Quadratic Equations</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            line-height: 1.8;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+        }
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        .content {
+            padding: 30px;
+        }
+        .section {
+            margin-bottom: 35px;
+            border-left: 5px solid #667eea;
+            padding-left: 20px;
+        }
+        .section h2 {
+            color: #667eea;
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 10px;
+        }
+        .section h3 {
+            color: #764ba2;
+            font-size: 1.3em;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        .definition-box, .theorem-box, .formula-box {
+            background: #f0f4ff;
+            border-left: 4px solid #667eea;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        .theorem-box {
+            border-left-color: #ff6b6b;
+            background: #ffe0e0;
+        }
+        .formula-box {
+            border-left-color: #4ecdc4;
+            background: #e0f7f6;
+            font-weight: bold;
+        }
+        .example-box {
+            background: #fff8e0;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        .mini-exam {
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 30px;
+        }
+        .mini-exam h2 {
+            color: #856404;
+            margin-bottom: 20px;
+        }
+        .question {
+            background: white;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+            border-left: 4px solid #ffc107;
+        }
+        .btn-answer {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 8px;
+        }
+        .btn-answer:hover {
+            background: #764ba2;
+        }
+        .answer {
+            background: #d4edda;
+            border-left: 4px solid #28a745;
+            padding: 12px;
+            margin-top: 12px;
+            border-radius: 4px;
+            color: #155724;
+            display: none;
+        }
+        .answer.show {
+            display: block;
+        }
+        ul, ol {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        code {
+            background: #e9ecef;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            color: #d63384;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        table th, table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        table th {
+            background: #667eea;
+            color: white;
+        }
+        footer {
+            background: #f8f9fa;
+            padding: 20px;
+            text-align: center;
+            color: #666;
+            border-top: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Chapter 4: Quadratic Equations</h1>
+            <p>Solutions, Discriminant, Nature of Roots, and Applications</p>
+        </header>
+        
+        <div class="content">
+            <div class="section">
+                <h2>Definitions</h2>
+                
+                <h3>1. Quadratic Equation</h3>
+                <div class="definition-box">
+                    <p><strong>Definition:</strong> Equation of form ax² + bx + c = 0 where a ≠ 0, a, b, c are real.</p>
+                    <p style="margin-top: 10px;"><strong>Example:</strong> x² - 5x + 6 = 0, 2x² + 3x - 2 = 0</p>
+                </div>
+                
+                <h3>2. Root/Solution</h3>
+                <div class="definition-box">
+                    <p><strong>Root:</strong> Value of x that satisfies the equation ax² + bx + c = 0</p>
+                </div>
+                
+                <h3>3. Discriminant</h3>
+                <div class="definition-box">
+                    <p><strong>Discriminant (Δ):</strong> Δ = b² - 4ac</p>
+                    <p style="margin-top: 10px;">Determines the nature and number of roots</p>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>Important Formulas</h2>
+                
+                <div class="formula-box">
+                    <p>1. <strong>Quadratic Formula:</strong></p>
+                    <p style="margin-top: 8px; font-size: 1.15em; text-align: center;">x = (-b ± √(b² - 4ac)) / 2a</p>
+                </div>
+                
+                <div class="formula-box">
+                    <p>2. <strong>Discriminant:</strong> Δ = b² - 4ac</p>
+                </div>
+                
+                <div class="formula-box">
+                    <p>3. <strong>Sum of roots (α + β):</strong> -b/a</p>
+                </div>
+                
+                <div class="formula-box">
+                    <p>4. <strong>Product of roots (αβ):</strong> c/a</p>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>Nature of Roots</h2>
+                
+                <table>
+                    <tr>
+                        <th>Discriminant Δ</th>
+                        <th>Nature of Roots</th>
+                        <th>Roots</th>
+                    </tr>
+                    <tr>
+                        <td>Δ > 0 (Perfect square)</td>
+                        <td>Two distinct real roots</td>
+                        <td>Rational and unequal</td>
+                    </tr>
+                    <tr>
+                        <td>Δ > 0 (Not perfect square)</td>
+                        <td>Two distinct real roots</td>
+                        <td>Irrational conjugates</td>
+                    </tr>
+                    <tr>
+                        <td>Δ = 0</td>
+                        <td>Two equal real roots</td>
+                        <td>Real and equal</td>
+                    </tr>
+                    <tr>
+                        <td>Δ < 0</td>
+                        <td>No real roots</td>
+                        <td>Imaginary/Complex</td>
+                    </tr>
+                </table>
+            </div>
+            
+            <div class="section">
+                <h2>Methods of Solving</h2>
+                
+                <h3>1. Factorization Method</h3>
+                <div class="example-box">
+                    <p><strong>Example: x² - 7x + 12 = 0</strong></p>
+                    <p style="margin-top: 10px;">(x - 3)(x - 4) = 0</p>
+                    <p>x = 3 or x = 4</p>
+                </div>
+                
+                <h3>2. Completing the Square</h3>
+                <div class="example-box">
+                    <p><strong>Example: x² - 4x - 5 = 0</strong></p>
+                    <p style="margin-top: 10px;">x² - 4x = 5</p>
+                    <p>x² - 4x + 4 = 5 + 4</p>
+                    <p>(x - 2)² = 9</p>
+                    <p>x - 2 = ±3</p>
+                    <p>x = 5 or x = -1</p>
+                </div>
+                
+                <h3>3. Quadratic Formula</h3>
+                <div class="example-box">
+                    <p><strong>Example: 2x² - 3x - 5 = 0</strong></p>
+                    <p style="margin-top: 10px;">a = 2, b = -3, c = -5</p>
+                    <p>x = (3 ± √(9 + 40)) / 4 = (3 ± √49) / 4 = (3 ± 7) / 4</p>
+                    <p>x = 10/4 = 5/2 or x = -4/4 = -1</p>
+                </div>
+            </div>
+            
+            <div class="mini-exam">
+                <h2>Mini Exam - Quadratic Equations</h2>
+                
+                <div class="question">
+                    <strong>Q1: Solve x² - 7x + 12 = 0</strong>
+                    <div class="options">
+                        <div class="option">A) 3, 4</div>
+                        <div class="option">B) 2, 6</div>
+                        <div class="option">C) 1, 12</div>
+                        <div class="option">D) -3, 4</div>
+                    </div>
+                    <button class="btn-answer" onclick="toggleAnswer(this)">Show Answer</button>
+                    <div class="answer">
+                        <strong>Answer: A) 3, 4</strong><br>
+                        (x - 3)(x - 4) = 0
+                    </div>
+                </div>
+                
+                <div class="question">
+                    <strong>Q2: Nature of roots of x² - 4x + 4 = 0</strong>
+                    <div class="options">
+                        <div class="option">A) Two distinct real</div>
+                        <div class="option">B) Two equal real</div>
+                        <div class="option">C) No real roots</div>
+                        <div class="option">D) Irrational</div>
+                    </div>
+                    <button class="btn-answer" onclick="toggleAnswer(this)">Show Answer</button>
+                    <div class="answer">
+                        <strong>Answer: B) Two equal real</strong><br>
+                        Δ = 16 - 16 = 0
+                    </div>
+                </div>
+                
+                <div class="question">
+                    <strong>Q3: Sum of roots of 3x² - 6x + 2 = 0</strong>
+                    <div class="options">
+                        <div class="option">A) 2</div>
+                        <div class="option">B) -2</div>
+                        <div class="option">C) 6/3</div>
+                        <div class="option">D) -6/3</div>
+                    </div>
+                    <button class="btn-answer" onclick="toggleAnswer(this)">Show Answer</button>
+                    <div class="answer">
+                        <strong>Answer: A) 2</strong><br>
+                        Sum = -b/a = 6/3 = 2
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <p>&copy; 2025 Class X Maths | Chapter 4: Quadratic Equations</p>
+        </footer>
+    </div>
+    
+    <script>
+        function toggleAnswer(button) {
+            const answer = button.nextElementSibling;
+            answer.classList.toggle('show');
+            button.textContent = answer.classList.contains('show') ? 'Hide Answer' : 'Show Answer';
+        }
+    </script>
+</body>
+</html>

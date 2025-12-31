@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 10: Circles</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: #333; line-height: 1.8; padding: 20px; }
+        .container { max-width: 1000px; margin: 0 auto; background: white; border-radius: 10px; box-shadow: 0 10px 40px rgba(0,0,0,0.3); }
+        header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 40px 30px; text-align: center; }
+        header h1 { font-size: 2.5em; margin-bottom: 10px; }
+        .content { padding: 30px; }
+        .section { margin-bottom: 35px; border-left: 5px solid #667eea; padding-left: 20px; }
+        .section h2 { color: #667eea; font-size: 1.8em; margin-bottom: 15px; border-bottom: 2px solid #667eea; padding-bottom: 10px; }
+        .section h3 { color: #764ba2; font-size: 1.3em; margin-top: 20px; margin-bottom: 10px; }
+        .definition-box, .formula-box { background: #f0f4ff; border-left: 4px solid #667eea; padding: 15px; margin: 15px 0; border-radius: 5px; }
+        .formula-box { border-left-color: #4ecdc4; background: #e0f7f6; font-weight: bold; }
+        .example-box { background: #fff8e0; border-left: 4px solid #ffc107; padding: 15px; margin: 15px 0; border-radius: 5px; }
+        .mini-exam { background: #fff3cd; border: 2px solid #ffc107; padding: 20px; border-radius: 8px; margin-top: 30px; }
+        .mini-exam h2 { color: #856404; margin-bottom: 20px; }
+        .question { background: white; padding: 15px; margin: 15px 0; border-radius: 5px; border-left: 4px solid #ffc107; }
+        .btn-answer { background: #667eea; color: white; border: none; padding: 8px 15px; border-radius: 4px; cursor: pointer; margin-top: 8px; }
+        .btn-answer:hover { background: #764ba2; }
+        .answer { background: #d4edda; border-left: 4px solid #28a745; padding: 12px; margin-top: 12px; border-radius: 4px; color: #155724; display: none; }
+        .answer.show { display: block; }
+        ul, ol { margin-left: 20px; margin-top: 10px; }
+        li { margin-bottom: 8px; }
+        footer { background: #f8f9fa; padding: 20px; text-align: center; color: #666; border-top: 1px solid #ddd; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Chapter 10: Circles</h1>
+            <p>Tangents, Chords, Secants, and Circle Properties</p>
+        </header>
+        
+        <div class="content">
+            <div class="section">
+                <h2>Definitions</h2>
+                
+                <h3>1. Circle</h3>
+                <div class="definition-box">
+                    <p><strong>Circle:</strong> Set of all points equidistant from a fixed point (center)</p>
+                    <p style="margin-top: 10px;">Equation: (x - h)² + (y - k)² = r²</p>
+                </div>
+                
+                <h3>2. Tangent</h3>
+                <div class="definition-box">
+                    <p><strong>Tangent:</strong> Line touching circle at exactly one point</p>
+                    <p style="margin-top: 10px;"><strong>Property:</strong> Tangent is perpendicular to radius at point of contact</p>
+                </div>
+                
+                <h3>3. Chord and Secant</h3>
+                <div class="definition-box">
+                    <p><strong>Chord:</strong> Line segment joining two points on circle</p>
+                    <p style="margin-top: 10px;"><strong>Secant:</strong> Line intersecting circle at two points</p>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>Important Theorems</h2>
+                
+                <div class="definition-box">
+                    <p><strong>Theorem 1:</strong> Tangent perpendicular to radius at point of contact</p>
+                    <p style="margin-top: 10px;"><strong>Theorem 2:</strong> Two tangents from external point are equal</p>
+                    <p style="margin-top: 10px;"><strong>Theorem 3:</strong> Perpendicular from center bisects the chord</p>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>Important Formulas</h2>
+                
+                <div class="formula-box">
+                    <p>1. <strong>Circumference:</strong> C = 2πr</p>
+                </div>
+                
+                <div class="formula-box">
+                    <p>2. <strong>Area:</strong> A = πr²</p>
+                </div>
+                
+                <div class="formula-box">
+                    <p>3. <strong>Arc length:</strong> l = (θ/360°) × 2πr</p>
+                </div>
+            </div>
+            
+            <div class="mini-exam">
+                <h2>Mini Exam - Circles</h2>
+                
+                <div class="question">
+                    <strong>Q1: Circumference of circle with r=7cm:</strong>
+                    <div class="options">
+                        <div class="option">A) 14π cm</div>
+                        <div class="option">B) 7π cm</div>
+                        <div class="option">C) 49π cm</div>
+                        <div class="option">D) 14 cm</div>
+                    </div>
+                    <button class="btn-answer" onclick="toggleAnswer(this)">Show Answer</button>
+                    <div class="answer">
+                        <strong>Answer: A) 14π cm</strong><br>
+                        C = 2πr = 2π(7) = 14π cm
+                    </div>
+                </div>
+                
+                <div class="question">
+                    <strong>Q2: Area of circle with r=5cm:</strong>
+                    <div class="options">
+                        <div class="option">A) 10π cm²</div>
+                        <div class="option">B) 25π cm²</div>
+                        <div class="option">C) 50π cm²</div>
+                        <div class="option">D) 100π cm²</div>
+                    </div>
+                    <button class="btn-answer" onclick="toggleAnswer(this)">Show Answer</button>
+                    <div class="answer">
+                        <strong>Answer: B) 25π cm²</strong><br>
+                        A = πr² = π(5)² = 25π cm²
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <p>&copy; 2025 Class X Maths | Chapter 10: Circles</p>
+        </footer>
+    </div>
+    
+    <script>
+        function toggleAnswer(button) {
+            const answer = button.nextElementSibling;
+            answer.classList.toggle('show');
+            button.textContent = answer.classList.contains('show') ? 'Hide Answer' : 'Show Answer';
+        }
+    </script>
+</body>
+</html>

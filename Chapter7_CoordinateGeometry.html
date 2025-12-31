@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 7: Coordinate Geometry</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: #333; line-height: 1.8; padding: 20px; }
+        .container { max-width: 1000px; margin: 0 auto; background: white; border-radius: 10px; box-shadow: 0 10px 40px rgba(0,0,0,0.3); }
+        header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 40px 30px; text-align: center; }
+        header h1 { font-size: 2.5em; margin-bottom: 10px; }
+        .content { padding: 30px; }
+        .section { margin-bottom: 35px; border-left: 5px solid #667eea; padding-left: 20px; }
+        .section h2 { color: #667eea; font-size: 1.8em; margin-bottom: 15px; border-bottom: 2px solid #667eea; padding-bottom: 10px; }
+        .section h3 { color: #764ba2; font-size: 1.3em; margin-top: 20px; margin-bottom: 10px; }
+        .formula-box { border-left-color: #4ecdc4; background: #e0f7f6; border-left: 4px solid #4ecdc4; padding: 15px; margin: 15px 0; border-radius: 5px; font-weight: bold; }
+        .example-box { background: #fff8e0; border-left: 4px solid #ffc107; padding: 15px; margin: 15px 0; border-radius: 5px; }
+        .mini-exam { background: #fff3cd; border: 2px solid #ffc107; padding: 20px; border-radius: 8px; margin-top: 30px; }
+        .mini-exam h2 { color: #856404; margin-bottom: 20px; }
+        .question { background: white; padding: 15px; margin: 15px 0; border-radius: 5px; border-left: 4px solid #ffc107; }
+        .btn-answer { background: #667eea; color: white; border: none; padding: 8px 15px; border-radius: 4px; cursor: pointer; margin-top: 8px; }
+        .btn-answer:hover { background: #764ba2; }
+        .answer { background: #d4edda; border-left: 4px solid #28a745; padding: 12px; margin-top: 12px; border-radius: 4px; color: #155724; display: none; }
+        .answer.show { display: block; }
+        footer { background: #f8f9fa; padding: 20px; text-align: center; color: #666; border-top: 1px solid #ddd; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Chapter 7: Coordinate Geometry</h1>
+            <p>Distance, Section Formula, Midpoint, and Slope</p>
+        </header>
+        
+        <div class="content">
+            <div class="section">
+                <h2>Important Formulas</h2>
+                
+                <div class="formula-box">
+                    <p>1. <strong>Distance Formula:</strong></p>
+                    <p style="margin-top: 8px; text-align: center;">d = √[(x₂-x₁)² + (y₂-y₁)²]</p>
+                </div>
+                
+                <div class="formula-box">
+                    <p>2. <strong>Midpoint Formula:</strong></p>
+                    <p style="margin-top: 8px; text-align: center;">M = ((x₁+x₂)/2, (y₁+y₂)/2)</p>
+                </div>
+                
+                <div class="formula-box">
+                    <p>3. <strong>Section Formula (m:n ratio):</strong></p>
+                    <p style="margin-top: 8px; text-align: center;">P = ((mx₂+nx₁)/(m+n), (my₂+ny₁)/(m+n))</p>
+                </div>
+                
+                <div class="formula-box">
+                    <p>4. <strong>Slope:</strong></p>
+                    <p style="margin-top: 8px; text-align: center;">m = (y₂-y₁)/(x₂-x₁)</p>
+                </div>
+                
+                <div class="formula-box">
+                    <p>5. <strong>Area of triangle with vertices (x₁,y₁), (x₂,y₂), (x₃,y₃):</strong></p>
+                    <p style="margin-top: 8px; text-align: center;">A = 1/2 |x₁(y₂-y₃) + x₂(y₃-y₁) + x₃(y₁-y₂)|</p>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>Examples</h2>
+                
+                <h3>Distance Formula</h3>
+                <div class="example-box">
+                    <p><strong>Find distance between A(3,4) and B(0,0):</strong></p>
+                    <p style="margin-top: 10px;">d = √[(3-0)² + (4-0)²] = √[9 + 16] = √25 = 5</p>
+                </div>
+                
+                <h3>Midpoint Formula</h3>
+                <div class="example-box">
+                    <p><strong>Find midpoint of P(4,6) and Q(8,10):</strong></p>
+                    <p style="margin-top: 10px;">M = ((4+8)/2, (6+10)/2) = (6, 8)</p>
+                </div>
+                
+                <h3>Slope</h3>
+                <div class="example-box">
+                    <p><strong>Find slope between (2,3) and (5,9):</strong></p>
+                    <p style="margin-top: 10px;">m = (9-3)/(5-2) = 6/3 = 2</p>
+                </div>
+            </div>
+            
+            <div class="mini-exam">
+                <h2>Mini Exam - Coordinate Geometry</h2>
+                
+                <div class="question">
+                    <strong>Q1: Distance between (3,4) and (0,0):</strong>
+                    <div class="options">
+                        <div class="option">A) 4</div>
+                        <div class="option">B) 5</div>
+                        <div class="option">C) 6</div>
+                        <div class="option">D) 7</div>
+                    </div>
+                    <button class="btn-answer" onclick="toggleAnswer(this)">Show Answer</button>
+                    <div class="answer">
+                        <strong>Answer: B) 5</strong>
+                    </div>
+                </div>
+                
+                <div class="question">
+                    <strong>Q2: Midpoint of (4,6) and (8,10):</strong>
+                    <div class="options">
+                        <div class="option">A) (5,7)</div>
+                        <div class="option">B) (6,8)</div>
+                        <div class="option">C) (7,9)</div>
+                        <div class="option">D) (4,5)</div>
+                    </div>
+                    <button class="btn-answer" onclick="toggleAnswer(this)">Show Answer</button>
+                    <div class="answer">
+                        <strong>Answer: B) (6,8)</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <p>&copy; 2025 Class X Maths | Chapter 7: Coordinate Geometry</p>
+        </footer>
+    </div>
+    
+    <script>
+        function toggleAnswer(button) {
+            const answer = button.nextElementSibling;
+            answer.classList.toggle('show');
+            button.textContent = answer.classList.contains('show') ? 'Hide Answer' : 'Show Answer';
+        }
+    </script>
+</body>
+</html>

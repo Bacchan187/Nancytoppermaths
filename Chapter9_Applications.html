@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 9: Some Applications of Trigonometry</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: #333; line-height: 1.8; padding: 20px; }
+        .container { max-width: 1000px; margin: 0 auto; background: white; border-radius: 10px; box-shadow: 0 10px 40px rgba(0,0,0,0.3); }
+        header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 40px 30px; text-align: center; }
+        header h1 { font-size: 2.5em; margin-bottom: 10px; }
+        .content { padding: 30px; }
+        .section { margin-bottom: 35px; border-left: 5px solid #667eea; padding-left: 20px; }
+        .section h2 { color: #667eea; font-size: 1.8em; margin-bottom: 15px; border-bottom: 2px solid #667eea; padding-bottom: 10px; }
+        .section h3 { color: #764ba2; font-size: 1.3em; margin-top: 20px; margin-bottom: 10px; }
+        .definition-box, .formula-box { background: #f0f4ff; border-left: 4px solid #667eea; padding: 15px; margin: 15px 0; border-radius: 5px; }
+        .formula-box { border-left-color: #4ecdc4; background: #e0f7f6; font-weight: bold; }
+        .example-box { background: #fff8e0; border-left: 4px solid #ffc107; padding: 15px; margin: 15px 0; border-radius: 5px; }
+        .mini-exam { background: #fff3cd; border: 2px solid #ffc107; padding: 20px; border-radius: 8px; margin-top: 30px; }
+        .mini-exam h2 { color: #856404; margin-bottom: 20px; }
+        .question { background: white; padding: 15px; margin: 15px 0; border-radius: 5px; border-left: 4px solid #ffc107; }
+        .btn-answer { background: #667eea; color: white; border: none; padding: 8px 15px; border-radius: 4px; cursor: pointer; margin-top: 8px; }
+        .btn-answer:hover { background: #764ba2; }
+        .answer { background: #d4edda; border-left: 4px solid #28a745; padding: 12px; margin-top: 12px; border-radius: 4px; color: #155724; display: none; }
+        .answer.show { display: block; }
+        ul, ol { margin-left: 20px; margin-top: 10px; }
+        li { margin-bottom: 8px; }
+        footer { background: #f8f9fa; padding: 20px; text-align: center; color: #666; border-top: 1px solid #ddd; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Chapter 9: Some Applications of Trigonometry</h1>
+            <p>Heights, Distances, Angles of Elevation and Depression</p>
+        </header>
+        
+        <div class="content">
+            <div class="section">
+                <h2>Definitions</h2>
+                
+                <h3>1. Angle of Elevation</h3>
+                <div class="definition-box">
+                    <p><strong>Angle of Elevation:</strong> Angle above the horizontal line when looking upward at an object.</p>
+                    <p style="margin-top: 10px;">Example: Looking at top of a building from ground level</p>
+                </div>
+                
+                <h3>2. Angle of Depression</h3>
+                <div class="definition-box">
+                    <p><strong>Angle of Depression:</strong> Angle below the horizontal line when looking downward at an object.</p>
+                    <p style="margin-top: 10px;">Example: Looking down from top of building to ground</p>
+                </div>
+                
+                <h3>3. Line of Sight</h3>
+                <div class="definition-box">
+                    <p><strong>Line of Sight:</strong> Straight line from observer's eye to the object being observed.</p>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>Key Formulas</h2>
+                
+                <div class="formula-box">
+                    <p>1. <strong>tan(angle) = Height/Distance</strong></p>
+                </div>
+                
+                <div class="formula-box">
+                    <p>2. <strong>For ladder/incline at angle θ with ground:</strong></p>
+                    <p style="margin-top: 8px;">Height = length × sin θ</p>
+                    <p>Distance = length × cos θ</p>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>Examples</h2>
+                
+                <h3>Height and Distance Problem</h3>
+                <div class="example-box">
+                    <p><strong>A ladder of length 10m makes 60° angle with ground. Find height:</strong></p>
+                    <p style="margin-top: 10px;">Height = 10 × sin 60° = 10 × (√3/2) = 5√3 m</p>
+                </div>
+                
+                <h3>Angle of Elevation Problem</h3>
+                <div class="example-box">
+                    <p><strong>From 100m away, angle of elevation to building top is 30°. Find height:</strong></p>
+                    <p style="margin-top: 10px;">tan 30° = Height/100</p>
+                    <p>1/√3 = Height/100</p>
+                    <p>Height = 100/√3 m ≈ 57.74 m</p>
+                </div>
+            </div>
+            
+            <div class="mini-exam">
+                <h2>Mini Exam - Applications</h2>
+                
+                <div class="question">
+                    <strong>Q1: Ladder 10m long makes 60° with ground, height reached:</strong>
+                    <div class="options">
+                        <div class="option">A) 5 m</div>
+                        <div class="option">B) 5√3 m</div>
+                        <div class="option">C) 10 m</div>
+                        <div class="option">D) 10√3 m</div>
+                    </div>
+                    <button class="btn-answer" onclick="toggleAnswer(this)">Show Answer</button>
+                    <div class="answer">
+                        <strong>Answer: B) 5√3 m</strong><br>
+                        h = 10 × sin 60° = 10 × √3/2 = 5√3 m
+                    </div>
+                </div>
+                
+                <div class="question">
+                    <strong>Q2: From 100m away, angle of elevation 30°, building height:</strong>
+                    <div class="options">
+                        <div class="option">A) 100/√3 m</div>
+                        <div class="option">B) 100√3 m</div>
+                        <div class="option">C) 50 m</div>
+                        <div class="option">D) 50√3 m</div>
+                    </div>
+                    <button class="btn-answer" onclick="toggleAnswer(this)">Show Answer</button>
+                    <div class="answer">
+                        <strong>Answer: A) 100/√3 m</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <p>&copy; 2025 Class X Maths | Chapter 9: Applications of Trigonometry</p>
+        </footer>
+    </div>
+    
+    <script>
+        function toggleAnswer(button) {
+            const answer = button.nextElementSibling;
+            answer.classList.toggle('show');
+            button.textContent = answer.classList.contains('show') ? 'Hide Answer' : 'Show Answer';
+        }
+    </script>
+</body>
+</html>

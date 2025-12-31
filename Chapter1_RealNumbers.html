@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 1: Real Numbers</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            line-height: 1.8;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+        }
+        
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        .content {
+            padding: 30px;
+        }
+        
+        .section {
+            margin-bottom: 35px;
+            border-left: 5px solid #667eea;
+            padding-left: 20px;
+        }
+        
+        .section h2 {
+            color: #667eea;
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 10px;
+        }
+        
+        .section h3 {
+            color: #764ba2;
+            font-size: 1.3em;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        
+        .definition-box, .theorem-box, .formula-box {
+            background: #f0f4ff;
+            border-left: 4px solid #667eea;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        
+        .theorem-box {
+            border-left-color: #ff6b6b;
+            background: #ffe0e0;
+        }
+        
+        .formula-box {
+            border-left-color: #4ecdc4;
+            background: #e0f7f6;
+            font-weight: bold;
+        }
+        
+        .example-box {
+            background: #fff8e0;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        
+        .mini-exam {
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 30px;
+        }
+        
+        .mini-exam h2 {
+            color: #856404;
+            margin-bottom: 20px;
+        }
+        
+        .question {
+            background: white;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+            border-left: 4px solid #ffc107;
+        }
+        
+        .question strong {
+            color: #856404;
+            font-size: 1.1em;
+        }
+        
+        .options {
+            margin: 10px 0 10px 20px;
+        }
+        
+        .option {
+            padding: 8px;
+            margin: 5px 0;
+            cursor: pointer;
+            border-radius: 3px;
+            transition: 0.2s;
+        }
+        
+        .option:hover {
+            background: #f0f0f0;
+        }
+        
+        .btn-answer {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.95em;
+            margin-top: 8px;
+        }
+        
+        .btn-answer:hover {
+            background: #764ba2;
+        }
+        
+        .answer {
+            background: #d4edda;
+            border-left: 4px solid #28a745;
+            padding: 12px;
+            margin-top: 12px;
+            border-radius: 4px;
+            color: #155724;
+            display: none;
+        }
+        
+        .answer.show {
+            display: block;
+        }
+        
+        ul, ol {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+            line-height: 1.7;
+        }
+        
+        code {
+            background: #e9ecef;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            color: #d63384;
+        }
+        
+        .highlight {
+            background: #fff3cd;
+            padding: 2px 5px;
+            border-radius: 2px;
+            font-weight: bold;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        
+        table th, table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        
+        table th {
+            background: #667eea;
+            color: white;
+        }
+        
+        table tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+        
+        footer {
+            background: #f8f9fa;
+            padding: 20px;
+            text-align: center;
+            color: #666;
+            border-top: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Chapter 1: Real Numbers</h1>
+            <p>Euclid's Division Lemma, HCF, LCM, and Properties of Real Numbers</p>
+        </header>
+        
+        <div class="content">
+            <!-- Definitions -->
+            <div class="section">
+                <h2>Definitions</h2>
+                
+                <h3>1. Real Numbers</h3>
+                <div class="definition-box">
+                    <p><strong>Real Numbers:</strong> Set of all rational and irrational numbers. Denoted by ℝ.</p>
+                    <p style="margin-top: 10px;"><strong>Rational Numbers (Q):</strong> Numbers that can be expressed as p/q where p, q ∈ Z and q ≠ 0</p>
+                    <p style="margin-top: 10px;"><strong>Irrational Numbers:</strong> Numbers that cannot be expressed as p/q. Examples: √2, √3, π, e</p>
+                </div>
+                
+                <h3>2. Divisibility</h3>
+                <div class="definition-box">
+                    <p><strong>Divisibility:</strong> If a and b are integers and b divides a (written as b|a), then there exists an integer k such that a = bk</p>
+                </div>
+                
+                <h3>3. Prime and Composite Numbers</h3>
+                <div class="definition-box">
+                    <p><strong>Prime Number:</strong> Natural number > 1 that has exactly two divisors: 1 and itself. Examples: 2, 3, 5, 7, 11, 13...</p>
+                    <p style="margin-top: 10px;"><strong>Composite Number:</strong> Natural number > 1 that has more than two divisors. Examples: 4, 6, 8, 9, 10...</p>
+                    <p style="margin-top: 10px;"><strong>Note:</strong> 1 is neither prime nor composite</p>
+                </div>
+                
+                <h3>4. HCF (Highest Common Factor)</h3>
+                <div class="definition-box">
+                    <p><strong>HCF (GCD):</strong> The largest positive integer that divides both numbers. Example: HCF(12, 18) = 6</p>
+                </div>
+                
+                <h3>5. LCM (Least Common Multiple)</h3>
+                <div class="definition-box">
+                    <p><strong>LCM:</strong> The smallest positive integer that is divisible by both numbers. Example: LCM(12, 18) = 36</p>
+                </div>
+            </div>
+            
+            <!-- Theorems -->
+            <div class="section">
+                <h2>Important Theorems</h2>
+                
+                <h3>1. Euclid's Division Lemma</h3>
+                <div class="theorem-box">
+                    <p><strong>Statement:</strong> For any two positive integers a and b, there exist unique integers q (quotient) and r (remainder) such that:</p>
+                    <p style="margin-top: 10px; font-size: 1.2em; text-align: center;"><strong>a = bq + r, where 0 ≤ r < b</strong></p>
+                    <p style="margin-top: 15px;"><strong>Proof Idea:</strong> Dividing a by b gives quotient q and remainder r</p>
+                    <p style="margin-top: 10px;"><strong>Application:</strong> Used to find HCF(a,b) by repeated division</p>
+                </div>
+                
+                <h3>2. Euclid's Division Algorithm</h3>
+                <div class="theorem-box">
+                    <p><strong>To find HCF(a,b) where a > b:</strong></p>
+                    <p style="margin-top: 10px;">Step 1: a = bq₁ + r₁</p>
+                    <p>Step 2: b = r₁q₂ + r₂</p>
+                    <p>Step 3: r₁ = r₂q₃ + r₃</p>
+                    <p>Continue until remainder = 0</p>
+                    <p style="margin-top: 10px;"><strong>HCF = Last non-zero remainder</strong></p>
+                </div>
+                
+                <h3>3. Fundamental Theorem of Arithmetic</h3>
+                <div class="theorem-box">
+                    <p><strong>Statement:</strong> Every composite number can be expressed uniquely as a product of prime numbers, except for the order of the primes.</p>
+                    <p style="margin-top: 10px;"><strong>Example:</strong> 84 = 2² × 3 × 7</p>
+                    <p style="margin-top: 10px;"><strong>Use:</strong> Finding HCF and LCM using prime factorization</p>
+                </div>
+                
+                <h3>4. HCF × LCM Relationship</h3>
+                <div class="theorem-box">
+                    <p style="font-size: 1.15em; text-align: center;"><strong>HCF(a,b) × LCM(a,b) = a × b</strong></p>
+                    <p style="margin-top: 15px;"><strong>Example:</strong> If a=12, b=18</p>
+                    <p>HCF = 6, LCM = 36</p>
+                    <p>6 × 36 = 216 = 12 × 18 ✓</p>
+                </div>
+            </div>
+            
+            <!-- Formulas -->
+            <div class="section">
+                <h2>Important Formulas</h2>
+                
+                <div class="formula-box">
+                    <p>1. Euclid's Division Lemma: <strong>a = bq + r</strong> where 0 ≤ r < b</p>
+                </div>
+                
+                <div class="formula-box">
+                    <p>2. HCF × LCM = Product of numbers: <strong>HCF(a,b) × LCM(a,b) = a × b</strong></p>
+                </div>
+                
+                <div class="formula-box">
+                    <p>3. Prime Factorization method for HCF: <strong>Take common prime factors with lowest powers</strong></p>
+                </div>
+                
+                <div class="formula-box">
+                    <p>4. Prime Factorization method for LCM: <strong>Take all prime factors with highest powers</strong></p>
+                </div>
+            </div>
+            
+            <!-- Methods -->
+            <div class="section">
+                <h2>Methods</h2>
+                
+                <h3>Finding HCF using Euclid's Algorithm</h3>
+                <div class="example-box">
+                    <p><strong>Example: Find HCF(48, 18)</strong></p>
+                    <p style="margin-top: 10px;">Step 1: 48 = 18 × 2 + 12</p>
+                    <p>Step 2: 18 = 12 × 1 + 6</p>
+                    <p>Step 3: 12 = 6 × 2 + 0</p>
+                    <p style="margin-top: 10px;"><strong>∴ HCF(48, 18) = 6</strong></p>
+                </div>
+                
+                <h3>Finding HCF and LCM using Prime Factorization</h3>
+                <div class="example-box">
+                    <p><strong>Example: Find HCF and LCM of 12 and 18</strong></p>
+                    <p style="margin-top: 10px;">12 = 2² × 3</p>
+                    <p>18 = 2 × 3²</p>
+                    <p style="margin-top: 10px;">HCF = 2¹ × 3¹ = 6</p>
+                    <p>LCM = 2² × 3² = 36</p>
+                    <p style="margin-top: 10px;">Check: 6 × 36 = 216 = 12 × 18 ✓</p>
+                </div>
+                
+                <h3>Irrational Numbers</h3>
+                <div class="example-box">
+                    <p><strong>Proof that √2 is irrational:</strong></p>
+                    <p style="margin-top: 10px;">Assume √2 = p/q (where p, q are coprime)</p>
+                    <p>Then: 2 = p²/q² → p² = 2q²</p>
+                    <p>This means p² is even → p is even</p>
+                    <p>Let p = 2k, then 4k² = 2q² → q² = 2k²</p>
+                    <p>This means q is also even</p>
+                    <p style="margin-top: 10px;"><strong>Contradiction! Hence √2 is irrational.</strong></p>
+                </div>
+            </div>
+            
+            <!-- Mini Exam -->
+            <div class="mini-exam">
+                <h2>Mini Exam - Real Numbers</h2>
+                
+                <div class="question">
+                    <strong>Q1: Find HCF(96, 64) using Euclid's Division Lemma</strong>
+                    <div class="options">
+                        <div class="option">A) 16</div>
+                        <div class="option">B) 32</div>
+                        <div class="option">C) 8</div>
+                        <div class="option">D) 64</div>
+                    </div>
+                    <button class="btn-answer" onclick="toggleAnswer(this)">Show Answer</button>
+                    <div class="answer">
+                        <strong>Answer: B) 32</strong><br>
+                        96 = 64 × 1 + 32<br>
+                        64 = 32 × 2 + 0<br>
+                        ∴ HCF(96, 64) = 32
+                    </div>
+                </div>
+                
+                <div class="question">
+                    <strong>Q2: If HCF(a,b) = 6 and LCM(a,b) = 60, find a × b</strong>
+                    <div class="options">
+                        <div class="option">A) 180</div>
+                        <div class="option">B) 240</div>
+                        <div class="option">C) 360</div>
+                        <div class="option">D) 480</div>
+                    </div>
+                    <button class="btn-answer" onclick="toggleAnswer(this)">Show Answer</button>
+                    <div class="answer">
+                        <strong>Answer: C) 360</strong><br>
+                        Using HCF × LCM = a × b<br>
+                        6 × 60 = 360
+                    </div>
+                </div>
+                
+                <div class="question">
+                    <strong>Q3: LCM(12, 18) =</strong>
+                    <div class="options">
+                        <div class="option">A) 36</div>
+                        <div class="option">B) 24</div>
+                        <div class="option">C) 18</div>
+                        <div class="option">D) 72</div>
+                    </div>
+                    <button class="btn-answer" onclick="toggleAnswer(this)">Show Answer</button>
+                    <div class="answer">
+                        <strong>Answer: A) 36</strong><br>
+                        12 = 2² × 3<br>
+                        18 = 2 × 3²<br>
+                        LCM = 2² × 3² = 36
+                    </div>
+                </div>
+                
+                <div class="question">
+                    <strong>Q4: Which of the following is irrational?</strong>
+                    <div class="options">
+                        <div class="option">A) √4</div>
+                        <div class="option">B) √5</div>
+                        <div class="option">C) 22/7</div>
+                        <div class="option">D) 0.5</div>
+                    </div>
+                    <button class="btn-answer" onclick="toggleAnswer(this)">Show Answer</button>
+                    <div class="answer">
+                        <strong>Answer: B) √5</strong><br>
+                        √4 = 2 (rational)<br>
+                        √5 cannot be written as p/q (irrational)<br>
+                        22/7 is rational<br>
+                        0.5 = 1/2 (rational)
+                    </div>
+                </div>
+                
+                <div class="question">
+                    <strong>Q5: Prime factorization of 84 is:</strong>
+                    <div class="options">
+                        <div class="option">A) 2 × 3 × 7</div>
+                        <div class="option">B) 2² × 3 × 7</div>
+                        <div class="option">C) 2 × 3² × 7</div>
+                        <div class="option">D) 2² × 3²</div>
+                    </div>
+                    <button class="btn-answer" onclick="toggleAnswer(this)">Show Answer</button>
+                    <div class="answer">
+                        <strong>Answer: B) 2² × 3 × 7</strong><br>
+                        84 = 4 × 21 = 4 × 3 × 7 = 2² × 3 × 7
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <p>&copy; 2025 Class X Maths | Chapter 1: Real Numbers</p>
+        </footer>
+    </div>
+    
+    <script>
+        function toggleAnswer(button) {
+            const answer = button.nextElementSibling;
+            answer.classList.toggle('show');
+            button.textContent = answer.classList.contains('show') ? 'Hide Answer' : 'Show Answer';
+        }
+    </script>
+</body>
+</html>

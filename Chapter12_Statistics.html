@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 12: Statistics</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: #333; line-height: 1.8; padding: 20px; }
+        .container { max-width: 1000px; margin: 0 auto; background: white; border-radius: 10px; box-shadow: 0 10px 40px rgba(0,0,0,0.3); }
+        header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 40px 30px; text-align: center; }
+        header h1 { font-size: 2.5em; margin-bottom: 10px; }
+        .content { padding: 30px; }
+        .section { margin-bottom: 35px; border-left: 5px solid #667eea; padding-left: 20px; }
+        .section h2 { color: #667eea; font-size: 1.8em; margin-bottom: 15px; border-bottom: 2px solid #667eea; padding-bottom: 10px; }
+        .section h3 { color: #764ba2; font-size: 1.3em; margin-top: 20px; margin-bottom: 10px; }
+        .definition-box, .formula-box { background: #f0f4ff; border-left: 4px solid #667eea; padding: 15px; margin: 15px 0; border-radius: 5px; }
+        .formula-box { border-left-color: #4ecdc4; background: #e0f7f6; font-weight: bold; }
+        .example-box { background: #fff8e0; border-left: 4px solid #ffc107; padding: 15px; margin: 15px 0; border-radius: 5px; }
+        .mini-exam { background: #fff3cd; border: 2px solid #ffc107; padding: 20px; border-radius: 8px; margin-top: 30px; }
+        .mini-exam h2 { color: #856404; margin-bottom: 20px; }
+        .question { background: white; padding: 15px; margin: 15px 0; border-radius: 5px; border-left: 4px solid #ffc107; }
+        .btn-answer { background: #667eea; color: white; border: none; padding: 8px 15px; border-radius: 4px; cursor: pointer; margin-top: 8px; }
+        .btn-answer:hover { background: #764ba2; }
+        .answer { background: #d4edda; border-left: 4px solid #28a745; padding: 12px; margin-top: 12px; border-radius: 4px; color: #155724; display: none; }
+        .answer.show { display: block; }
+        ul, ol { margin-left: 20px; margin-top: 10px; }
+        li { margin-bottom: 8px; }
+        table { width: 100%; border-collapse: collapse; margin: 15px 0; }
+        table th, table td { border: 1px solid #ddd; padding: 12px; text-align: left; }
+        table th { background: #667eea; color: white; }
+        footer { background: #f8f9fa; padding: 20px; text-align: center; color: #666; border-top: 1px solid #ddd; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Chapter 12: Statistics</h1>
+            <p>Mean, Median, Mode, Variance, and Standard Deviation</p>
+        </header>
+        
+        <div class="content">
+            <div class="section">
+                <h2>Definitions</h2>
+                
+                <h3>1. Mean (Average)</h3>
+                <div class="definition-box">
+                    <p><strong>Mean:</strong> Sum of all values divided by number of values</p>
+                    <p style="margin-top: 10px;">Mean = Σx / n</p>
+                </div>
+                
+                <h3>2. Median</h3>
+                <div class="definition-box">
+                    <p><strong>Median:</strong> Middle value when data is arranged in order</p>
+                    <p style="margin-top: 10px;">For odd n: Middle value. For even n: Average of two middle values</p>
+                </div>
+                
+                <h3>3. Mode</h3>
+                <div class="definition-box">
+                    <p><strong>Mode:</strong> Most frequently occurring value in dataset</p>
+                </div>
+                
+                <h3>4. Range</h3>
+                <div class="definition-box">
+                    <p><strong>Range:</strong> Difference between highest and lowest values</p>
+                    <p style="margin-top: 10px;">Range = Max - Min</p>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>Important Formulas</h2>
+                
+                <div class="formula-box">
+                    <p>1. <strong>Mean for grouped data:</strong> Mean = Σ(f × x) / Σf</p>
+                </div>
+                
+                <div class="formula-box">
+                    <p>2. <strong>Variance:</strong> σ² = Σ(x - mean)² / n</p>
+                </div>
+                
+                <div class="formula-box">
+                    <p>3. <strong>Standard Deviation:</strong> σ = √(Variance)</p>
+                </div>
+                
+                <div class="formula-box">
+                    <p>4. <strong>Coefficient of Variation:</strong> CV = (σ / mean) × 100%</p>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>Examples</h2>
+                
+                <h3>Finding Mean, Median, Mode</h3>
+                <div class="example-box">
+                    <p><strong>Data: 2, 4, 6, 8, 10</strong></p>
+                    <p style="margin-top: 10px;">Mean = (2+4+6+8+10)/5 = 30/5 = 6</p>
+                    <p>Median = 6 (middle value)</p>
+                    <p>Mode = No mode (all appear once)</p>
+                </div>
+                
+                <h3>Finding Variance</h3>
+                <div class="example-box">
+                    <p><strong>For data: 1, 2, 3, 4, 5</strong></p>
+                    <p style="margin-top: 10px;">Mean = 3</p>
+                    <p>Deviations: -2, -1, 0, 1, 2</p>
+                    <p>Variance = (4+1+0+1+4)/5 = 10/5 = 2</p>
+                    <p>SD = √2 ≈ 1.41</p>
+                </div>
+            </div>
+            
+            <div class="mini-exam">
+                <h2>Mini Exam - Statistics</h2>
+                
+                <div class="question">
+                    <strong>Q1: Mean of 2, 4, 6, 8, 10:</strong>
+                    <div class="options">
+                        <div class="option">A) 4</div>
+                        <div class="option">B) 5</div>
+                        <div class="option">C) 6</div>
+                        <div class="option">D) 7</div>
+                    </div>
+                    <button class="btn-answer" onclick="toggleAnswer(this)">Show Answer</button>
+                    <div class="answer">
+                        <strong>Answer: C) 6</strong><br>
+                        Mean = 30/5 = 6
+                    </div>
+                </div>
+                
+                <div class="question">
+                    <strong>Q2: Median of 1, 2, 3, 4, 5, 6, 7:</strong>
+                    <div class="options">
+                        <div class="option">A) 3</div>
+                        <div class="option">B) 4</div>
+                        <div class="option">C) 5</div>
+                        <div class="option">D) 6</div>
+                    </div>
+                    <button class="btn-answer" onclick="toggleAnswer(this)">Show Answer</button>
+                    <div class="answer">
+                        <strong>Answer: B) 4</strong><br>
+                        Middle value of 7 values is 4th value
+                    </div>
+                </div>
+                
+                <div class="question">
+                    <strong>Q3: Mode of 1, 2, 2, 3, 3, 3, 4:</strong>
+                    <div class="options">
+                        <div class="option">A) 1</div>
+                        <div class="option">B) 2</div>
+                        <div class="option">C) 3</div>
+                        <div class="option">D) 4</div>
+                    </div>
+                    <button class="btn-answer" onclick="toggleAnswer(this)">Show Answer</button>
+                    <div class="answer">
+                        <strong>Answer: C) 3</strong><br>
+                        3 appears most frequently (3 times)
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <p>&copy; 2025 Class X Maths | Chapter 12: Statistics</p>
+        </footer>
+    </div>
+    
+    <script>
+        function toggleAnswer(button) {
+            const answer = button.nextElementSibling;
+            answer.classList.toggle('show');
+            button.textContent = answer.classList.contains('show') ? 'Hide Answer' : 'Show Answer';
+        }
+    </script>
+</body>
+</html>

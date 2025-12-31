@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 3: Pair of Linear Equations</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            line-height: 1.8;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+        }
+        
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        .content {
+            padding: 30px;
+        }
+        
+        .section {
+            margin-bottom: 35px;
+            border-left: 5px solid #667eea;
+            padding-left: 20px;
+        }
+        
+        .section h2 {
+            color: #667eea;
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 10px;
+        }
+        
+        .section h3 {
+            color: #764ba2;
+            font-size: 1.3em;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        
+        .definition-box, .theorem-box, .formula-box {
+            background: #f0f4ff;
+            border-left: 4px solid #667eea;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        
+        .theorem-box {
+            border-left-color: #ff6b6b;
+            background: #ffe0e0;
+        }
+        
+        .formula-box {
+            border-left-color: #4ecdc4;
+            background: #e0f7f6;
+            font-weight: bold;
+        }
+        
+        .example-box {
+            background: #fff8e0;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        
+        .mini-exam {
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 30px;
+        }
+        
+        .mini-exam h2 {
+            color: #856404;
+            margin-bottom: 20px;
+        }
+        
+        .question {
+            background: white;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+            border-left: 4px solid #ffc107;
+        }
+        
+        .question strong {
+            color: #856404;
+            font-size: 1.1em;
+        }
+        
+        .options {
+            margin: 10px 0 10px 20px;
+        }
+        
+        .option {
+            padding: 8px;
+            margin: 5px 0;
+        }
+        
+        .btn-answer {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.95em;
+            margin-top: 8px;
+        }
+        
+        .btn-answer:hover {
+            background: #764ba2;
+        }
+        
+        .answer {
+            background: #d4edda;
+            border-left: 4px solid #28a745;
+            padding: 12px;
+            margin-top: 12px;
+            border-radius: 4px;
+            color: #155724;
+            display: none;
+        }
+        
+        .answer.show {
+            display: block;
+        }
+        
+        ul, ol {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        code {
+            background: #e9ecef;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            color: #d63384;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        
+        table th, table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        
+        table th {
+            background: #667eea;
+            color: white;
+        }
+        
+        footer {
+            background: #f8f9fa;
+            padding: 20px;
+            text-align: center;
+            color: #666;
+            border-top: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Chapter 3: Pair of Linear Equations in Two Variables</h1>
+            <p>Methods of Solving: Substitution, Elimination, Cross-Multiplication, Graphical</p>
+        </header>
+        
+        <div class="content">
+            <div class="section">
+                <h2>Definitions</h2>
+                
+                <h3>1. Linear Equation in Two Variables</h3>
+                <div class="definition-box">
+                    <p><strong>Definition:</strong> Equation of form ax + by + c = 0 where a, b, c are real numbers and a, b are not both zero.</p>
+                    <p style="margin-top: 10px;"><strong>Standard form:</strong> ax + by = c</p>
+                </div>
+                
+                <h3>2. Pair of Linear Equations</h3>
+                <div class="definition-box">
+                    <p><strong>Definition:</strong> System of two linear equations in two variables:</p>
+                    <p style="margin-top: 10px;">a₁x + b₁y + c₁ = 0</p>
+                    <p>a₂x + b₂y + c₂ = 0</p>
+                </div>
+                
+                <h3>3. Types of Systems</h3>
+                <div class="definition-box">
+                    <ul>
+                        <li><strong>Consistent:</strong> System has at least one solution</li>
+                        <li><strong>Inconsistent:</strong> System has no solution (parallel lines)</li>
+                        <li><strong>Independent:</strong> Unique solution (intersecting lines)</li>
+                        <li><strong>Dependent:</strong> Infinite solutions (same line)</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>Conditions for Solutions</h2>
+                
+                <table>
+                    <tr>
+                        <th>Ratio Comparison</th>
+                        <th>Lines Type</th>
+                        <th>Solutions</th>
+                        <th>Type</th>
+                    </tr>
+                    <tr>
+                        <td>a₁/a₂ ≠ b₁/b₂</td>
+                        <td>Intersecting</td>
+                        <td>Unique</td>
+                        <td>Consistent & Independent</td>
+                    </tr>
+                    <tr>
+                        <td>a₁/a₂ = b₁/b₂ = c₁/c₂</td>
+                        <td>Coincident</td>
+                        <td>Infinite</td>
+                        <td>Consistent & Dependent</td>
+                    </tr>
+                    <tr>
+                        <td>a₁/a₂ = b₁/b₂ ≠ c₁/c₂</td>
+                        <td>Parallel</td>
+                        <td>None</td>
+                        <td>Inconsistent</td>
+                    </tr>
+                </table>
+            </div>
+            
+            <div class="section">
+                <h2>Important Formulas & Methods</h2>
+                
+                <h3>1. Substitution Method</h3>
+                <div class="formula-box">
+                    Step 1: Solve one equation for one variable<br>
+                    Step 2: Substitute in other equation<br>
+                    Step 3: Solve for variable<br>
+                    Step 4: Back-substitute to find other variable
+                </div>
+                
+                <h3>2. Elimination Method</h3>
+                <div class="formula-box">
+                    Step 1: Make coefficients of one variable equal<br>
+                    Step 2: Add or subtract equations<br>
+                    Step 3: Solve for remaining variable<br>
+                    Step 4: Find other variable
+                </div>
+                
+                <h3>3. Cross-Multiplication Method</h3>
+                <div class="formula-box">
+                    For a₁x + b₁y + c₁ = 0 and a₂x + b₂y + c₂ = 0:<br>
+                    x/(b₁c₂ - b₂c₁) = y/(c₁a₂ - c₂a₁) = 1/(a₁b₂ - a₂b₁)
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>Examples</h2>
+                
+                <h3>Using Substitution Method</h3>
+                <div class="example-box">
+                    <p><strong>Solve: 2x + y = 7 and x - y = 2</strong></p>
+                    <p style="margin-top: 10px;">From equation 2: x = y + 2</p>
+                    <p>Substitute in equation 1: 2(y + 2) + y = 7</p>
+                    <p>2y + 4 + y = 7 → 3y = 3 → y = 1</p>
+                    <p>x = 1 + 2 = 3</p>
+                    <p style="margin-top: 10px;"><strong>Solution: (3, 1)</strong></p>
+                </div>
+                
+                <h3>Using Elimination Method</h3>
+                <div class="example-box">
+                    <p><strong>Solve: 3x + 2y = 11 and 2x - 3y = 3</strong></p>
+                    <p style="margin-top: 10px;">Multiply 1st by 3: 9x + 6y = 33</p>
+                    <p>Multiply 2nd by 2: 4x - 6y = 6</p>
+                    <p>Add: 13x = 39 → x = 3</p>
+                    <p>From 1st: 9 + 2y = 11 → y = 1</p>
+                    <p style="margin-top: 10px;"><strong>Solution: (3, 1)</strong></p>
+                </div>
+            </div>
+            
+            <div class="mini-exam">
+                <h2>Mini Exam - Linear Equations</h2>
+                
+                <div class="question">
+                    <strong>Q1: Solve 2x + y = 7 and x - y = 2</strong>
+                    <div class="options">
+                        <div class="option">A) (3, 1)</div>
+                        <div class="option">B) (2, 3)</div>
+                        <div class="option">C) (1, 5)</div>
+                        <div class="option">D) (4, -1)</div>
+                    </div>
+                    <button class="btn-answer" onclick="toggleAnswer(this)">Show Answer</button>
+                    <div class="answer">
+                        <strong>Answer: A) (3, 1)</strong><br>
+                        Adding equations: 3x = 9 → x = 3<br>
+                        From 2nd: 3 - y = 2 → y = 1
+                    </div>
+                </div>
+                
+                <div class="question">
+                    <strong>Q2: For 3x + 2y = 8 and 6x + 4y = 16, system is:</strong>
+                    <div class="options">
+                        <div class="option">A) Unique solution</div>
+                        <div class="option">B) Infinite solutions</div>
+                        <div class="option">C) No solution</div>
+                        <div class="option">D) Cannot determine</div>
+                    </div>
+                    <button class="btn-answer" onclick="toggleAnswer(this)">Show Answer</button>
+                    <div class="answer">
+                        <strong>Answer: B) Infinite solutions</strong><br>
+                        Equation 2 = 2 × Equation 1 (Same line)
+                    </div>
+                </div>
+                
+                <div class="question">
+                    <strong>Q3: Number of solutions of x + 2y = 5 and x + 2y = 7</strong>
+                    <div class="options">
+                        <div class="option">A) 0</div>
+                        <div class="option">B) 1</div>
+                        <div class="option">C) 2</div>
+                        <div class="option">D) Infinite</div>
+                    </div>
+                    <button class="btn-answer" onclick="toggleAnswer(this)">Show Answer</button>
+                    <div class="answer">
+                        <strong>Answer: A) 0</strong><br>
+                        Same coefficients but different constants<br>
+                        Parallel lines - No solution
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <p>&copy; 2025 Class X Maths | Chapter 3: Pair of Linear Equations</p>
+        </footer>
+    </div>
+    
+    <script>
+        function toggleAnswer(button) {
+            const answer = button.nextElementSibling;
+            answer.classList.toggle('show');
+            button.textContent = answer.classList.contains('show') ? 'Hide Answer' : 'Show Answer';
+        }
+    </script>
+</body>
+</html>
